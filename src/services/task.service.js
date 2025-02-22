@@ -23,9 +23,19 @@ const createTask = async (taskBody) => {
  */
 const queryTasks = async (filter, options, userId) => {
   const updatedFilter = { ...filter, userId };
-  const tasks = await Task.paginate(updatedFilter, options);
+
+  const sortOptions = options.sortBy || 'createdAt:desc';
+  const sort = {};
+  
+  if (sortOptions) {
+    const [field, order] = sortOptions.split(':');
+    sort[field] = order === 'asc' ? 1 : -1;
+  }
+
+  const tasks = await Task.paginate(updatedFilter, { ...options, sort });
   return tasks;
 };
+
 
 /**
  * Get task by id
