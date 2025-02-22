@@ -55,7 +55,7 @@ app.use('/v1', routes);
 
 //base route
 app.get('/', (req, res) => {
-  res.send('Navigate to <a href="https://todolist-9l13.onrender.com/v1/docs/">https://todolist-9l13.onrender.com/v1/docs/</a> API documentation')
+  res.send('Navigate to <a href="https://test-backend-1-g7ln.onrender.com/v1/docs/">https://test-backend-1-g7ln.onrender.com/v1/docs</a> API documentation')
 });
 
 // send back a 404 error for any unknown api request

@@ -9,7 +9,7 @@ const swaggerDef = {
   },
   servers: [
     {
-      url: `https://todolist-9l13.onrender.com/v1`,
+      url: `https://test-backend-1-g7ln.onrender.com/v1`,
     },
     {
       url: `http://localhost:3000/v1`,
