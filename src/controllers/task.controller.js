@@ -29,7 +29,7 @@ const getTask = catchAsync(async (req, res) => {
 });
 
 const updateTask = catchAsync(async (req, res) => {
-  const task = await taskService.updateTaskById(req.params.taskId, req.body, req.user._id);
+  const task = await taskService.updateTaskById(req.params.taskId, req.body);
   res.send(task);
 });
 

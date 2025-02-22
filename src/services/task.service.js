@@ -54,8 +54,8 @@ const getTaskById = async (id, userId) => {
  * @param {string} userId
  * @returns {Promise<Task>}
  */
-const updateTaskById = async (taskId, updateBody, userId) => {
-  const task = await getTaskById(taskId, userId);
+const updateTaskById = async (taskId, updateBody) => {
+  const task = await getTaskById(taskId);
   if (!task) {
     throw new ApiError(httpStatus.NOT_FOUND, "Task not found");
   }
@@ -70,8 +70,8 @@ const updateTaskById = async (taskId, updateBody, userId) => {
  * @param {string} userId
  * @returns {Promise<Task>}
  */
-const deleteTaskById = async (taskId, userId) => {
-  const task = await getTaskById(taskId, userId);
+const deleteTaskById = async (taskId) => {
+  const task = await getTaskById(taskId);
   if (!task) {
     throw new ApiError(httpStatus.NOT_FOUND, "task not found");
   }
